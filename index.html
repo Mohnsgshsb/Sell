@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="id"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="./zmcgpi.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐏𝐀𝐍𝐄𝑳 𝑭𝑳𝑰𝑿</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./all.min.css">
+    <style>       
+<style>
+@keyframes drip {
+  0% { text-shadow: 0 0 5px red, 0 0 10px red; }
+  50% { text-shadow: 0 5px 15px red, 0 0 20px red; }
+  100% { text-shadow: 0 0 5px red, 0 0 10px red; }
+}
+
+@keyframes bloodFall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(40px); opacity: 0; }
+}
+
+.blood {
+  position: relative;
+  display: inline-block;
+}
+
+.blood h1 {
+  font-size: 1.5em; /* حجم العنوان */
+  color: red;
+  animation: drip 1.5s infinite;
+  position: relative;
+}
+
+.blood::after {
+  content: "🩸🩸🩸🩸🩸🩸"; /* 8 نقاط دم */
+  position: absolute;
+  bottom: -30px; /* تحت العنوان */
+  left: 8%;
+  transform: translateX(-50%);
+  font-size: 1.5em;
+  animation: bloodFall 1.5s infinite;
+}
+#intro.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+        #intro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.intro-box {
+  border: 2px solid red;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  font-family: "Courier New", monospace;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px red;
+}
+
+.intro-box h1 {
+  color: red;
+  font-size: 1.2em;
+  text-shadow: 0 0 15px crimson;
+  margin-bottom: 15px;
+}
+
+.intro-box p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+.btn-glow {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  color: white;
+  background: red;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 10px black;
+  box-shadow: 0 0 15px red, 0 0 25px crimson, 0 0 40px darkred;
+  transition: 0.3s;
+}
+
+.btn-glow:hover {
+  background: darkred;
+  box-shadow: 0 0 20px crimson, 0 0 40px red, 0 0 60px darkred;
+}
+        
+        @import url('images/zmcgpi.jpg');
+        
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #f2f2f2; 
+}
+.social-links {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: red; /* اللون الأساسي أحمر */
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.3);
+  color: darkred; /* يفضل نخليها أحمر أغمق عند الـ hover */
+}
+        .panel-card {
+  bac kground: #111;
+  border: 2px solid red;
+  box-shadow: 0 0 25px red;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  color: white;
+  transition: 0.3s;
+}
+
+.panel-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px crimson;
+}
+
+.panel-card h2 {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.panel-card p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.buy-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background: linear-gradient(90deg, red, darkred);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 20px red;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: crimson;
+  box-shadow: 0 0 30px red;
+}
+            .news-strip {
+      display: flex;
+      overflow-x: auto;
+      background-color: #111;
+      border-bottom: 2px solid #e50914;
+      padding: 10px;
+    }
+    .news-card {
+      flex: 0 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #e50914;
+      border-radius: 8px;
+      margin-right: 15px;
+      width: 250px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    }
+    .news-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .news-card h4 {
+      color: #e50914;
+      margin: 10px 0 5px;
+    }
+    .news-card p {
+      font-size: 14px;
+    }
+        
+        .header {
+            text-align: center;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        .header h1 {
+      font-size: 1.5em;
+      color: #FF0000;
+      text-shadow: 2px 2px 10px rgba(229, 9, 20, 0.8);
+    }
+        
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255,0,0,0.1);
+    border-left: 5px solid #cc0000;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.08); /* يكبر الكارد */
+    box-shadow: 0 0 40px rgba(255,0,0,0.7); /* يزود التوهج */
+}
+
+        
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card:nth-child(5) { animation-delay: 1.0s; }
+        .card:nth-child(6) { animation-delay: 1.2s; }
+        .card:nth-child(7) { animation-delay: 1.4s; }
+        .card:nth-child(8) { animation-delay: 1.6s; }
+        
+        .card h2 {
+            font-size: 1.8me;
+            margin-bottom: 15px;
+            color: #cc0000;
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 120px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #eee;
+        }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff0000, #cc0000); 
+    color: black; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+}
+            .news-card {
+      flex: 0 0 auto;
+      background: #1a1a1a;
+      border: 1px solid #e50914;
+      border-radius: 8px;
+      margin-right: 15px;
+      width: 250px;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    }
+    .news-card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .news-card h4 {
+      color: #e50914;
+      margin: 10px 0 5px;
+    }
+    .news-card p {
+      font-size: 14px;
+    }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .payment-section {
+            width: 90%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-in-out forwards;
+            animation-delay: 1.8s;
+            border: 3px solid;
+            border-image-slice: 1;
+            animation: borderAnimation 4s linear infinite, fadeInUp 0.8s ease-in-out forwards 1.8s;
+        }
+        
+        .payment-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+          #floatingBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: url('images/icons8-whatsapp-50.png') no-repeat center center;
+  background-size: 70%;
+  background-color: rgba(255, 0, 0, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.4);
+  cursor: pointer;
+  z-index: 9999;
+  touch-action: none;
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease;
+}
+
+#floatingBtn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.6);
+}
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes borderAnimation {
+            0% { border-image-source: linear-gradient(45deg, red, lime, blue); }
+            33% { border-image-source: linear-gradient(45deg, blue, red, lime); }
+            66% { border-image-source: linear-gradient(45deg, lime, blue, red); }
+            100% { border-image-source: linear-gradient(45deg, red, lime, blue); }
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <div class="intro-box">
+ <h1>𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑰𝑵 𝑾𝑬𝑷 𝑷𝑨𝑵𝑬𝑳 𝑭𝑳𝑰𝑿</h1><br>
+    
+    <pre>╭─────⧼ 𝐼𝑛𝑓𝑜𝑟𝑚𝑎𝑡𝑖𝑜𝑛⧽─────≽
+   𝐎𝐔𝐑 𝐏𝐀𝐍𝐄𝐋 𝐈𝐒 𝐅𝐀𝐒𝐓, 𝐒𝐄𝐂𝐔𝐑𝐄
+
+   𝐅𝐀𝐒𝐓 𝐀𝐍𝐃 𝐔𝐍𝐒𝐓𝐎𝐏𝐏𝐀𝐁𝐋𝐄
+
+   𝐋𝐎𝐖 𝐏𝐑𝐈𝐂𝐄 𝐁𝐔𝐓 𝐃𝐄𝐀𝐃𝐋𝐘
+
+   𝟐𝟒/𝟕 𝐒𝐄𝐑𝐕𝐈𝐂𝐄 𝐍𝐎 𝐄𝐒𝐂𝐀𝐏𝐄
+
+   𝐖𝐈𝐓𝐇 𝐘𝐎𝐔 𝐀𝐋𝐋 𝐒𝐔𝐁𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍
+
+   𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐐𝐔𝐀𝐋𝐈𝐓𝐘
+        
+   𝐃𝐄𝐀𝐓𝐇𝐋𝐘 𝐃𝐄𝐒𝐈𝐆𝐍
+╰─────────────❏
+    </pre>
+<a href="#" class="btn-glow" onclick="enterSite()">Enter Site</a>
+        </div>
+    </div>
+
+<audio id="bg-music" loop="">
+  <source src="media/terbo.mp3" type="audio/mpeg">
+</audio>
+    
+    <div class="blood">
+        <h1>𝐁𝐔𝐘 𝐏𝐀𝐍𝐄𝑳 𝑭𝑳𝑰𝑿</h1>
+    </div>
+        <div class="social-links">
+      <a href="https://github.com/Mohnd32145" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://discord.gg/s5KcdUMH" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://m.facebook.com/malik888Xxx/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://youtube.com/@malik888xx?si=javX89sTzLulv8AN" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    
+<div class="container">
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐎𝐍𝐄</h2>
+        <p> 𝗥𝗔𝗠 ↜﹝3GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝3GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝50%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝55﹞↶<br>
+        </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐓𝐖𝐎</h2>
+        <p> 𝗥𝗔𝗠 ↜﹝4.5GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝4GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝65%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝70﹞↶<br>
+        </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+        
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐓𝐇𝐑𝐄𝐄</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝6GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝6GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝85%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝100﹞↶<br>
+               </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐅𝐎𝐔𝐑</h2>
+                <p> 𝗥𝗔𝗠 ↜﹝8GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝8GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝100%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝150﹞↶<br>
+                </p>
+       <a href="http://vf.eg/vfcash?id=mt&qrId=0GcxQ7" class="buy-btn">𝙫𝙤𝙙𝙖𝙛𝙤𝙣𝙚 𝙘𝙖𝙨𝙝</a>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐅𝐈𝐕𝐄</h2>
+                        <p> 𝗥𝗔𝗠 ↜﹝9GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝8.5GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝115%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝190﹞↶<br>
+                        </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐒𝐈𝐗</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝10GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝9GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝150%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝200﹞↶<br>
+               </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐒𝐄𝐕𝐄𝐍</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝12GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝12GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝180%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝225﹞↶<br>
+               </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+    
+    <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐄𝐈𝐆𝐇𝐓</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝15GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝15GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝200%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝250﹞↶<br>
+               </p>
+        <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+    </div>
+        <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐍𝐈𝐍𝐄</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝18GB﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝15GB﹞↶<br>
+         𝗖𝗣𝗨 ↜﹝220%﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝280﹞↶<br>
+               </p>
+            <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+        </div>
+        <div class="card">
+        <h2>𝐏𝐀𝐍𝐄𝐋 𝐓𝐄𝐍</h2>
+               <p> 𝗥𝗔𝗠 ↜﹝unlimted﹞↶<br>
+         𝗗𝗜𝗦𝗞 ↜﹝unlimted﹞↶<br>
+         𝐄𝐆𝐏 ↜﹝400﹞↶<br>
+               </p>
+            <a href="Https://t.me/SAPONA123" class="buy-btn">𝙩𝙤 𝙨𝙪𝙥𝙥𝙤𝙧𝙩</a>
+        </div>
+</div>
+    <footer>
+  BUY SERVER VPS 2019 © 
+    </footer>
+    
+    <script>
+function enterSite() {
+  const intro = document.getElementById("intro");
+  intro.classList.add("fade-out");
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 1000); // يختفي بعد 1 ثانية (وقت الترانزيشن)
+}
+    </script>
+
+</body></html>
